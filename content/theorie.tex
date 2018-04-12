@@ -4,8 +4,32 @@ Dafür wird die Wechselwirkung von $\gamma$- und $\beta$-Strahlung mit diesen Ma
 \section{Theorie}
 \label{sec:Theorie}
 \subsection{Absorption}
+Trifft ein Teilchenstrahl auf Materie, so finden Wechselwirkungen mit dieser statt.
+Der Wirkungsquerschnitt $\sigma$ stellt ein Maß für die Häufigkeit der Wechselwirkungen dar.
+Die Wahrscheinlichkeit, dass ein Teilchen eine Reaktion auslöst beträgt für einen Absorber mit Querschnitt F und Dicke D:
+\begin{equation}
+  W= \frac{nFD\sigma}{F}= nD \sigma    .
+\end{equation}
+Wenn $N_0$ Teilchen auf den Absorber treffen, finden
+\begin{equation}
+  N = N_0 nD \sigma
+  \label{eq:gl1}
+\end{equation}
+Wechelwirkungen pro Zeit statt.
+Bei einem realen Absorber muss, aufgrund der Vielzahl der Atome pro Volumeneinheit, $\sigma$ über eine infinitesimal dünne Schicht $dx$ aufsummiert werden.
+Es kann nicht davon ausgegangen werden, dass die $\sigma$ sich in Strahlrichtung nicht überdecken.
+Es wird angenommen, dass diese dünne Schicht $dx$ an einer Stelle $x$ innerhalb des Absorbers, mit der Dicke D, befindet.
+Dann finden gemäß Gleichung\eqref{eq:gl1}
+\begin{equation}
+  dN = -N(x) n \sigma dx
+\end{equation}
+Reaktionen statt.
+Die Zahl der Teilchen, welche nach Durchgang durch den Absorber übrigbleiben, lässt sich durch Integration über alle Schichten dx finden.
+Damit ergibt sich die Gleichung:
+\begin{equation}
+  N(D) = N_0 \exp(-n\sigma D)  .
+\end{equation}
+
 \subsection{Gamma-Strahlung}
 
 \subsection{Beta-Strahlung}
-
-\cite{sample}
