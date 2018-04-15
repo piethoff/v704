@@ -29,7 +29,74 @@ Damit ergibt sich die Gleichung:
 \begin{equation}
   N(D) = N_0 \exp(-n\sigma D)  .
 \end{equation}
-
+Diese ist streng gültig, wenn jedes einfallende Teilchen höchstens eine Wechselwirkung mit der Materie eingeht.
+Der Exponentialfaktor,
+\begin{equation}
+  \mu = n \sigma   ,
+\end{equation}
+wird als Absorbtionskoeffizient bezeichnet.
+Es wird angenommen, dass die Elektronen eines Absorbermaterials die Wechselwirkungszentren darstellen.
+Es folgt:
+\begin{equation}
+  n= \frac{z N_L \rho}{M}
+  \label{eq:gl2}
+\end{equation}
+Hier ist $N_L$ die Loschmidtsche Zahl, welche die Anzahl der Molekühle pro Volumeneinheit eines idealen Gases angibt, und $M$ das Molekulargewicht.
+Aus Gleichung\eqref{eq:gl2} folgt für den Wirkungsquerschnitt:
+\begin{equation}
+  \sigma=\frac{\mu M}{z N_L \rho}
+  \label{eq:wirk}
+\end{equation}
+Gleichung\eqref{eq:wirk} ist eine grobe Näherung der Realität.
 \subsection{Gamma-Strahlung}
+Atomkerne besitzen diskrete Energieniveaus.
+Wenn ein Atomkern in einen energetisch niedrigen Zustand übergeht, so wird $\gamma$-Strahlung emittiert.
+Diese weißt eigenschaften einer elektromagnetischen Welle auf, so kann die Energie der $\gamma$-Strahlung
+nach der Quantenmechanik wie folgt angegeben werden:
+\begin{equation}
+  E_\gamma = h\nu  .
+\end{equation}
+Die $gamma$-Strahlung kann beim Eindringen in eine Materieschicht mit den Atomelektronen, den Kernen und ihren elektrichen Feldern eine vielzahl von Wechselwirkungen eingehen.
+In diesem Versuch sind die wichtigsten Wechselwirkunsprozesse der Photo-Effekt, der Compton-Effekt und die Paarbildung.
+Bei dem Photo-Effekt wechselwirkt ein $\gamma$-Quant mit einem Hüllenelektron, dabei wird das $\gamma$-Quant vernichtet und das Elektron aus seiner Bindung entfernt.
+Die kinetische Energie des Elektrons lässt sich dann mit
+\begin{equation}
+  E_e = h\nu - E_B
+\end{equation}
+angeben.
+$E_B$ stellt die Bindungsenergie des Elektrons dar.
+Das Auftreten des Photoeffekts ist also nur möglich wenn $h\nu < E_B$ gilt.
+Durch den Impulssatz folgt, dass das Atom einen Teil des Quantenimulses aufnehmen muss.
+Dies ist nur wahrscheinlich, wenn das Elektron möglichst fest an das Atom gebunden ist.
+Daraus folgt , dass das Auftreten des Photoeffekts unwahrscheinlicher wird, wenn $E_\gamma$  viel größer als die Bindungsenergie ist.
 
+Der zweite zu betrachtende Effekt ist der Comtoneffekt.
+Dieser beschreibt die Streuung an einem freien Elektron.
+Es kommt zu einer Richtungs- und Energieänderung.
+Das $\gamma$-Quant kann nach Energie- und Impulssatz nicht seine komplette Energie an ein freies Elektron abgeben.
+Es wird also nach der Wechselwirkung nicht anhiliert.
+Die Intensität des $\gamma$-Strahls nimmt ab.
+Der Wirkungsquerschnitt lässt sich nach Nischina und Klein mit
+\begin{equation}
+  \sigma_{Com} = 2 \pi r_e^2 \left\{\frac{1+\varepsilon}{\varepsilon^2}\left[\frac{2(1+\varepsilon)}{1+2\varepsilon} - \frac{1}{\varepsilon}ln(1+2\varepsilon)\right] + \frac{1}{2\varepsilon}ln(1+2\varepsilon) - \frac{1+3\varepsilon}{(1+2\varepsilon)^2} \right\}
+\end{equation}
+berechen.
+Das Verhältnis der Quantenenrgie $E_\gamma$ zur Ruheenergie des Elektrons wird durch
+\begin{equation}
+  \varepsilon = \frac{E_\gamma}{m_0 c^2}
+\end{equation}
+ausgedrückt und
+\begin{equation}
+  r_e= 2.82 \cdot 10^-15 \si{\meter}
+\end{equation}
+bezeichet den "klassischen Elektronenradius".
+Es soll nicht angedeutet werden, dass ein Elektron einen endlichen Radius besitzt, sondern die Streuwahrscheinlichkeit angegeben werden.
+Bei der Betrachtung von $\sigma_{Com}$ für kleine Energien lässt sich feststellen, dass $\sigma_{Com}$ nahezu Enrgieunabhängig ist und gegen den Thomsonschen Wirkungsquerschnitt strebt:
+\begin{equation}
+  \lim_{\varepsilon \rightarrow 0} \sigma_{Com}(\varepsilon) = \frac{4}{3} \cdot 2 \pi r_e^2 = \frac{8}{3}\pi r_e^2 =: \sigma_{Th}
+\end{equation}
+Die Paarbildung tritt ein, wenn die $\gamma$-Energie größer als die doppelte Ruheenergie des Elektrons ist.
+Dann wird das $\gamma$-Quant unter Bildung eines Elektrons und eines Positrons annihiliert.
+Es ist nicht ausreichend das die Energie des erwähnten Betrages absorbiert wird, sondern es benötigt einen zusätzlichen Stoßpartner.
+Dazu dienen meistens Atomkerne des Absorbermaterials.
 \subsection{Beta-Strahlung}
