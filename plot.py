@@ -91,10 +91,9 @@ plt.clf()
 
 beta_null = np.genfromtxt("content/beta_null.txt", unpack=True)
 beta = np.genfromtxt("content/beta.txt", unpack=True)
-beta[1] = beta[0]
-beta[0] = beta[2]
-beta[2] = beta[1]
-beta[1] = beta[3]
+##beta[0] = beta[2]
+##beta[2] = beta[1]
+##beta[1] = beta[3]
 
 print(beta_null)
 print(beta)
@@ -105,9 +104,8 @@ d_b = np.sqrt(beta[1])
 d_n/= beta_null[0]
 d_b/= beta[0]
 
-beta[0] = beta[1]/beta[0] - beta_null[1][1]/beta_null[0][1]
-beta[1] = np.sqrt( d_b**2 + d_n[1]**2 )
-
+beta[0] = beta[1]/beta[0] - beta_null[1]/beta_null[0]
+beta[1] = np.sqrt( d_b**2 + d_n**2 )
 print(beta)
 
 ## dn = sqrt(n)
@@ -118,12 +116,12 @@ print(beta)
 ## dC = sqrt( (d(c/t))² + (d(n/t'))² )
 ## dC = sqrt( c/t² + n/t'² )
 
-pivot = 5
+pivot = 6
 
-#params, covar = curve_fit(exp, beta[2][:pivot], beta[0][:pivot], absolute_sigma=True, sigma = beta[1][:pivot])
-#uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
-#print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
-#print(uparams)
+##params, covar = curve_fit(exp, beta[2][:pivot], beta[0][:pivot], absolute_sigma=True, sigma = beta[1][:pivot])
+##uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
+##print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
+##print(uparams)
 
 
 plt.errorbar(beta[2], beta[0], yerr = beta[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Aluminiumabschirmung")
@@ -132,7 +130,7 @@ plt.errorbar(beta[2], beta[0], yerr = beta[1], elinewidth=0.7, capthick=0.7, cap
 #plt.plot(gamma_zn[2], exp(gamma_zn[2], *params), color="xkcd:orange", label="lin. Fit")
 
 plt.yscale("log")
-plt.xlabel(r"Dicke$/\si{\milli\meter}$")
+plt.xlabel(r"R$/\si{\kg\per\meter\squared}$")
 plt.ylabel(r"Aktivität$/\si{\becquerel}$")
 plt.legend()
 plt.tight_layout()
