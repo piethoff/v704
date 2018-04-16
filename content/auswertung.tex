@@ -1,11 +1,11 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Absorbtion von \texorpdfstring{$\gamma$}{Gamma}-Strahlung}
-Im Folgenden wird die Absorbtion von $\gamma$-STrahlung untersucht.
+Im Folgenden wird die Absorbtion von $\gamma$-Strahlung untersucht.
 Für die Nullrate ergibt sich ein Wert von:
 %
 \begin{table}
-    \caption{Nullrate der Gammastrahlung.}
+    \caption{Nullrate der $\gamma$-Strahlung.}
     \label{tab:gamma_null}
     \centering
     \begin{tabular}{S[table-format=3(0)e0] S[table-format=3(2)e0] S[table-format=1.2(4)e0] }
@@ -19,8 +19,60 @@ Für die Nullrate ergibt sich ein Wert von:
 \noindent
 Da die hier aufgenommenen Zählraten Poissonverteilt sind ergibt sich eine Unsicherheit von $\sigma = \sqrt{N}$, 
 die Fortpflanzung geschieht nach Gauß.
-
-
-
+%
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{gamma_pb.pdf}
+  \caption{Absorbtion der $\gamma$-Strahlung in Blei.}
+  \label{fig:gamma_pb}
+\end{figure}
+\noindent
+Es wurde nach der Vorschrift
+\begin{equation}
+    y = mx + n
+\end{equation}
+mit den Fitparametern
+\begin{align}
+    \mu &= m = \SI{}{\per\milli\meter} \\
+    N_0 &= n = \SI{}{\becquerel}.
+\end{align}
+Im Vergleich dazu steht der nach Gleichung \eqref{eq:dubbi} berechnete Theoriewert:
+\begin{align}
+    \mu_\text{Theorie} = \SI{0.069}{\per\milli\meter} \\
+\end{align}
+Somit ergibt sich eine Abweichung von \SI{}{\percent}.
+%
+Für die Absorbtion in Zink ergeben sich folgende Messwerte:
+%tabelle
+\noindent
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{gamma_zn.pdf}
+  \caption{Absorbtion der $\gamma$-Strahlung in Zink.}
+  \label{fig:gamma_zn}
+\end{figure}
+\noindent
+Es wie zuvor linear 
+mit den Fitparametern
+\begin{align}
+    \mu &= m = \SI{}{\per\milli\meter} \\
+    N_0 &= n = \SI{}{\becquerel}
+\end{align}
+gefittet.
+Im Vergleich dazu steht der nach Gleichung \eqref{eq:dubbi} berechnete Theoriewert:
+\begin{align}
+    \mu_\text{Theorie} = \SI{0.051}{\per\milli\meter} \\
+\end{align}
+Somit ergibt sich eine Abweichung von \SI{}{\percent}.
 %
 \subsection{Absorbtion von \texorpdfstring{$\beta$}{Beta}-Strahlung}
+Aus der Messung der $\beta$-Stahlung entstehen die Messwerte in Tabelle \ref{tab:beta}
+%tabelle
+\noindent
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{beta.pdf}
+  \caption{Absorbtion der $\beta$-Strahlung in Aluminium.}
+  \label{fig:beta}
+\end{figure}
+\noindent
