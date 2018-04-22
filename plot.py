@@ -36,6 +36,11 @@ gamma_pb[1] = np.sqrt( d_pb**2 + d_n**2 )
 gamma_zn[0] = gamma_zn[1]/gamma_zn[0] - gamma_null[1]/gamma_null[0]
 gamma_zn[1] = np.sqrt( d_zn**2 + d_n**2 )
 
+for i in range(gamma_pb[0].size):
+    print(gamma_pb[:,i])
+for i in range(gamma_zn[0].size):
+    print(gamma_zn[:,i])
+
 
 ## dn = sqrt(n)
 ## dc = sqrt(c)
@@ -91,12 +96,13 @@ plt.clf()
 
 beta_null = np.genfromtxt("content/beta_null.txt", unpack=True)
 beta = np.genfromtxt("content/beta.txt", unpack=True)
-##beta[0] = beta[2]
-##beta[2] = beta[1]
-##beta[1] = beta[3]
+beta[1] = beta[3]
+beta[3] = beta[2]
+beta[2] = beta[0]
+beta[0] = beta[3]
 
-print(beta_null)
-print(beta)
+#print(beta_null)
+#print(beta)
 
 d_n = np.sqrt(beta_null[1])
 d_b = np.sqrt(beta[1])
@@ -106,7 +112,15 @@ d_b/= beta[0]
 
 beta[0] = beta[1]/beta[0] - beta_null[1]/beta_null[0]
 beta[1] = np.sqrt( d_b**2 + d_n**2 )
-print(beta)
+
+#for i in range(beta[0].size):
+#    if(beta[0][i]-beta[1][i] < 0):
+#        beta[1][i] = beta[0][i] * 0.1
+#beta[0] += 0.1
+for i in range(beta[0].size):
+    print(beta[:,i])
+
+beta[2]*=2.7*1000000
 
 ## dn = sqrt(n)
 ## dc = sqrt(c)
@@ -117,17 +131,24 @@ print(beta)
 ## dC = sqrt( c/t² + n/t'² )
 
 pivot = 6
+pivot2 = 3
 
-##params, covar = curve_fit(exp, beta[2][:pivot], beta[0][:pivot], absolute_sigma=True, sigma = beta[1][:pivot])
-##uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
-##print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
-##print(uparams)
+params, covar = curve_fit(exp, beta[2,:pivot2], beta[0,:pivot2], absolute_sigma=True, sigma = beta[1,:pivot2], p0=(-1e-11,0))
+uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
+print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
+print(uparams)
 
 
 plt.errorbar(beta[2], beta[0], yerr = beta[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Aluminiumabschirmung")
 
-#plt.plot(gamma_zn[2], exp(gamma_zn[2], *params), color="xkcd:orange", label="lin. Fit")
-#plt.plot(gamma_zn[2], exp(gamma_zn[2], *params), color="xkcd:orange", label="lin. Fit")
+plt.plot(beta[2], exp(beta[2], *params), color="xkcd:orange", label="lin. Fit")
+
+params, covar = curve_fit(exp, beta[2,pivot:], beta[0,pivot:], absolute_sigma=True, sigma = beta[1,pivot:], p0=(-1e-9,3))
+uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
+print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
+print(uparams)
+
+plt.plot(beta[2], exp(beta[2], *params), color="xkcd:orange", label="lin. Fit")
 
 plt.yscale("log")
 plt.xlabel(r"R$/\si{\kg\per\meter\squared}$")

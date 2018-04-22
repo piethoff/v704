@@ -4,7 +4,7 @@
 Im Folgenden wird die Absorbtion von $\gamma$-Strahlung untersucht.
 Für die Nullrate ergibt sich ein Wert von:
 %
-\begin{table}
+\begin{table}[H]
     \caption{Nullrate der $\gamma$-Strahlung.}
     \label{tab:gamma_null}
     \centering
@@ -17,7 +17,32 @@ Für die Nullrate ergibt sich ein Wert von:
     \end{tabular}
 \end{table}
 \noindent
-Da die hier aufgenommenen Zählraten Poissonverteilt sind ergibt sich eine Unsicherheit von $\sigma = \sqrt{N}$,
+Die Messwerte für eine Abschirmung durch Blei sind in Tabelle \ref{tab:gamma_pb} zusammen mit der entsprechenden Aktivität aufgetragen.
+\begin{table}
+    \caption{Messung der $\gamma$-Strahlung durch Blei.}
+    \label{tab:gamma_pb}
+    \centering
+    \begin{tabular}{S[table-format=4(0)e0] S[table-format=3(0)e0] S[table-format=3.2(4)e0]  S[table-format=2]}
+        \toprule
+        {Counts} & {$t/\si{\second}$} & {Aktivität$/\si{\becquerel}$} & {$d/\si{\milli\meter}$} \\
+        \midrule
+             8096 & 60  & 133.88 \pm  1.50 &   1 \\
+             7395 & 60  & 122.20 \pm  1.43 &   2 \\
+             7272 & 70  & 102.83 \pm  1.22 &   3 \\
+             8529 & 90  &  93.71 \pm  1.03 &   4 \\
+             8105 & 100 & 79.99  \pm  0.90 &   5 \\
+             6946 & 130 & 52.37  \pm  0.64 &  10 \\
+             6278 & 150 & 40.80  \pm  0.53 &  12 \\
+             4983 & 170 & 28.26  \pm  0.42 &  15 \\
+             3946 & 220 & 16.88  \pm  0.29 &  20 \\
+             5501 & 350 & 14.66  \pm  0.21 &  30 \\
+             1557 & 500 &  2.06  \pm  0.09 &  40 \\
+             1156 & 700 &  0.60  \pm  0.06 &  50 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent
+Da die hier aufgenommenen Zählraten poissonverteilt sind ergibt sich eine Unsicherheit von $\sigma = \sqrt{N}$,
 die Fortpflanzung geschieht nach Gauß.
 %
 \begin{figure}[H]
@@ -29,21 +54,40 @@ die Fortpflanzung geschieht nach Gauß.
 \noindent
 Es wurde nach der Vorschrift
 \begin{equation}
-    y = mx + n
+    y = e^{mx + n}
 \end{equation}
 mit den Fitparametern
 \begin{align}
-    \mu &= m = \SI{}{\per\milli\meter} \\
-    N_0 &= n = \SI{}{\becquerel}.
+    \mu &= m = \SI{-0.099\pm0.001}{\per\milli\meter} \\
+    N_0 &= n = \SI{4.94\pm0.01}{\becquerel}.
 \end{align}
-Im Vergleich dazu steht der nach Gleichung \eqref{eq:dubbi} berechnete Theoriewert:
+Im Vergleich dazu steht der nach Gleichung \eqref{eq:klein} berechnete Theoriewert:
 \begin{align}
     \mu_\text{Theorie} = \SI{0.069}{\per\milli\meter} \\
 \end{align}
-Somit ergibt sich eine Abweichung von \SI{}{\percent}.
+Somit ergibt sich eine Abweichung von \SI{43.5\pm0.1}{\percent}.
 %
 Für die Absorbtion in Zink ergeben sich folgende Messwerte:
-%tabelle
+\begin{table}
+    \caption{Messung der $\gamma$-Strahlung durch Blei.}
+    \label{tab:gamma_pb}
+    \centering
+    \begin{tabular}{S[table-format=5(0)e0] S[table-format=3(0)e0] S[table-format=3.2(4)e0]  S[table-format=2]}
+        \toprule
+        {Counts} & {$t/\si{\second}$} & {Aktivität$/\si{\becquerel}$} & {$d/\si{\milli\meter}$} \\
+        \midrule
+            11900 & 80 &  147.69 \pm   1.36 &      2        \\
+            10454 & 80 &  129.62 \pm   1.28 &      4        \\
+            10737 & 90 &  118.24 \pm   1.15 &      6        \\
+            11149 & 100 & 110.43 \pm   1.06 &      8        \\
+            11634 & 120 & 95.89  \pm   0.90 &     10        \\
+            12375 & 140 & 87.34  \pm   0.80 &     12        \\
+            12173 & 150 & 80.10  \pm   0.74 &     14        \\
+            12027 & 160 & 74.11  \pm   0.69 &     16        \\
+            11405 & 180 & 62.30  \pm   0.59 &     20        \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 \noindent
 \begin{figure}[H]
   \centering
@@ -55,19 +99,41 @@ Für die Absorbtion in Zink ergeben sich folgende Messwerte:
 Es wie zuvor linear
 mit den Fitparametern
 \begin{align}
-    \mu &= m = \SI{}{\per\milli\meter} \\
-    N_0 &= n = \SI{}{\becquerel}
+    \mu &= m = \SI{-0.048\pm0.001}{\per\milli\meter} \\
+    N_0 &= n = \SI{5.07\pm0.01}{\becquerel}
 \end{align}
 gefittet.
-Im Vergleich dazu steht der nach Gleichung \eqref{eq:dubbi} berechnete Theoriewert:
+Im Vergleich dazu steht der nach Gleichung \eqref{eq:klein} berechnete Theoriewert:
 \begin{align}
     \mu_\text{Theorie} = \SI{0.051}{\per\milli\meter} \\
 \end{align}
-Somit ergibt sich eine Abweichung von \SI{}{\percent}.
+Somit ergibt sich eine Abweichung von \SI{5.9\pm2.0}{\percent}.
 %
 \subsection{Absorbtion von \texorpdfstring{$\beta$}{Beta}-Strahlung}
 Aus der Messung der $\beta$-Stahlung entstehen die Messwerte in Tabelle \ref{tab:beta}
-%tabelle
+\begin{table}
+    \caption{Messung der $\beta$-Strahlung durch Aluminium.}
+    \label{tab:beta}
+    \centering
+    \begin{tabular}{S[table-format=5(0)e0] S[table-format=4(0)e0] S[table-format=3.2(4)e0]  S[table-format=3.0]}
+        \toprule
+        {Counts} & {$t/\si{\second}$} & {Aktivität$/\si{\becquerel}$} & {$d/\si{\micro\meter}$} \\
+        \midrule
+              636  & 1000 & 0.06 \pm  0.04  & 482 \\
+              627  & 1000 & 0.05 \pm  0.04  & 444 \\
+              646  & 1000 & 0.07 \pm  0.04  & 400 \\
+              680  & 1000 & 0.10 \pm  0.04  & 338 \\
+              627  & 900  & 0.12 \pm  0.04  & 302 \\
+              534  & 700  & 0.19 \pm  0.04  & 253 \\
+              864  & 500  & 1.15 \pm  0.06  & 200 \\
+              1251 & 300  & 3.59 \pm  0.12  & 160 \\
+              1336 & 200  & 6.10 \pm  0.18  & 153 \\
+              1469 & 200  & 6.77 \pm  0.19  & 125 \\
+              5573 & 200  & 27.29 \pm 0.37  & 100 \\
+              46115 & 101 & 456.01 \pm 2.13 &   0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 \noindent
 \begin{figure}[H]
   \centering
@@ -76,3 +142,26 @@ Aus der Messung der $\beta$-Stahlung entstehen die Messwerte in Tabelle \ref{tab
   \label{fig:beta}
 \end{figure}
 \noindent
+Es werden zwei Bereiche mit folgenden Wertepaaren linear gefittet:
+\begin{align}
+    m_1 &= \SI{-8.5\pm37.6e-10}{\per\kg\meter\squared} \\ %e-10
+    n_1 &= \SI{-1.7\pm4.4}{\becquerel}                  \\
+    m_2 &= \SI{-1.123\pm0.003e-8}{\per\kg\meter\squared} \\ %e-8
+    n_2 &= \SI{6.125\pm0.005}{\becquerel}
+\end{align}
+Es folgt somit, dass
+\begin{equation}
+    R_\text{max} = \frac{n_2-n_1}{m_1-m_2}
+\end{equation}
+und
+\begin{equation}
+    \symup{\Delta}R_\text{max} = \sqrt{
+        \left( \frac{n_1}{m_1-m_2}\symup{\Delta}n_2 \right) ^2 + 
+        \left( \frac{n_2}{m_1-m_2}\symup{\Delta}n_1 \right) ^2 + 
+        \left( \frac{n_2-n_1}{(m_1-m_2)^2}\right) ^2 \left(\symup{\Delta}m_1 + \symup{\Delta}m_2 \right)
+        },
+\end{equation}
+wodurch ein Wert folgt von
+\begin{equation}
+    R_\text{max} = \SI{753\pm2611e6}{\kg\per\meter\squared}
+\end{equation}
