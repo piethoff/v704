@@ -12,10 +12,11 @@ Für die Nullrate ergibt sich ein Wert von:
         \toprule
         {$t/\si{\second}$} & {Counts} & {Aktivität$/\si{\becquerel}$} \\
         \midrule
-        900 &   951\pm31 & 1.06\pm0.03 \\
+        900 &   951 & 1.06 \\
         \bottomrule
     \end{tabular}
 \end{table}
+Aufgrund der hohen Messzeit für die Nullrate ust der Fehler vernachlässibar gering.
 \noindent
 Die Messwerte für eine Abschirmung durch Blei sind in Tabelle \ref{tab:gamma_pb} zusammen mit der entsprechenden Aktivität aufgetragen.
 \begin{table}
@@ -42,6 +43,7 @@ Die Messwerte für eine Abschirmung durch Blei sind in Tabelle \ref{tab:gamma_pb
     \end{tabular}
 \end{table}
 \noindent
+
 Da die hier aufgenommenen Zählraten poissonverteilt sind ergibt sich eine Unsicherheit von $\sigma = \sqrt{N}$,
 die Fortpflanzung geschieht nach Gauß.
 %
@@ -52,7 +54,7 @@ die Fortpflanzung geschieht nach Gauß.
   \label{fig:gamma_pb}
 \end{figure}
 \noindent
-Es wurde nach der Vorschrift
+Es wird nach der Vorschrift
 \begin{equation}
     y = e^{mx + n}
 \end{equation}
@@ -156,8 +158,8 @@ Es folgt somit, dass
 und
 \begin{equation}
     \symup{\Delta}R_\text{max} = \sqrt{
-        \left( \frac{n_1}{m_1-m_2}\symup{\Delta}n_2 \right) ^2 + 
-        \left( \frac{n_2}{m_1-m_2}\symup{\Delta}n_1 \right) ^2 + 
+        \left( \frac{n_1}{m_1-m_2}\symup{\Delta}n_2 \right) ^2 +
+        \left( \frac{n_2}{m_1-m_2}\symup{\Delta}n_1 \right) ^2 +
         \left( \frac{n_2-n_1}{(m_1-m_2)^2}\right) ^2 \left(\symup{\Delta}m_1 + \symup{\Delta}m_2 \right)
         },
 \end{equation}
