@@ -8,7 +8,7 @@ Für die Nullrate ergibt sich ein Wert von:
     \caption{Nullrate der $\gamma$-Strahlung.}
     \label{tab:gamma_null}
     \centering
-    \begin{tabular}{S[table-format=3(0)e0] S[table-format=3(2)e0] S[table-format=1.2(4)e0] }
+    \begin{tabular}{S[table-format=3(0)e0] S[table-format=3(0)e0] S[table-format=1.2(0)e0] }
         \toprule
         {$t/\si{\second}$} & {Counts} & {Aktivität$/\si{\becquerel}$} \\
         \midrule
@@ -19,7 +19,7 @@ Für die Nullrate ergibt sich ein Wert von:
 Aufgrund der hohen Messzeit für die Nullrate ust der Fehler vernachlässibar gering.
 \noindent
 Die Messwerte für eine Abschirmung durch Blei sind in Tabelle \ref{tab:gamma_pb} zusammen mit der entsprechenden Aktivität aufgetragen.
-\begin{table}
+\begin{table}[H]
     \caption{Messung der $\gamma$-Strahlung durch Blei.}
     \label{tab:gamma_pb}
     \centering
@@ -43,9 +43,8 @@ Die Messwerte für eine Abschirmung durch Blei sind in Tabelle \ref{tab:gamma_pb
     \end{tabular}
 \end{table}
 \noindent
-
 Da die hier aufgenommenen Zählraten poissonverteilt sind ergibt sich eine Unsicherheit von $\sigma = \sqrt{N}$,
-die Fortpflanzung geschieht nach Gauß.
+die Fortpflanzung geschieht nach Gauß und ist in Tabelle \ref{tab:gamma_pb} mit aufgenommen.
 %
 \begin{figure}[H]
   \centering
@@ -158,12 +157,12 @@ Es folgt somit, dass
 und
 \begin{equation}
     \symup{\Delta}R_\text{max} = \sqrt{
-        \left( \frac{n_1}{m_1-m_2}\symup{\Delta}n_2 \right) ^2 +
-        \left( \frac{n_2}{m_1-m_2}\symup{\Delta}n_1 \right) ^2 +
-        \left( \frac{n_2-n_1}{(m_1-m_2)^2}\right) ^2 \left(\symup{\Delta}m_1 + \symup{\Delta}m_2 \right)
+        \left( \frac{1}{m_1-m_2}\symup{\Delta}n_2 \right) ^2 +
+        \left( \frac{1}{m_1-m_2}\symup{\Delta}n_1 \right) ^2 +
+        \left( \frac{n_2-n_1}{(m_1-m_2)^2}\right) ^2 \left(\symup{\Delta}m_1^2 + \symup{\Delta}m_2^2 \right)
         },
 \end{equation}
 wodurch ein Wert folgt von
 \begin{equation}
-    R_\text{max} = \SI{753\pm2611e6}{\kg\per\meter\squared}
+    R_\text{max} = \SI{753\pm2611e6}{\kg\per\meter\squared}.
 \end{equation}

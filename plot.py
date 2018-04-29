@@ -36,10 +36,10 @@ gamma_pb[1] = np.sqrt( d_pb**2 + d_n**2 )
 gamma_zn[0] = gamma_zn[1]/gamma_zn[0] - gamma_null[1]/gamma_null[0]
 gamma_zn[1] = np.sqrt( d_zn**2 + d_n**2 )
 
-for i in range(gamma_pb[0].size):
-    print(gamma_pb[:,i])
-for i in range(gamma_zn[0].size):
-    print(gamma_zn[:,i])
+#for i in range(gamma_pb[0].size):
+#    print(gamma_pb[:,i])
+#for i in range(gamma_zn[0].size):
+#    print(gamma_zn[:,i])
 
 
 ## dn = sqrt(n)
@@ -61,7 +61,7 @@ print("Parameter m und n(=e^A) für Bleiabschirmung: ")
 print(uparams)
 
 
-plt.errorbar(gamma_pb[2], gamma_pb[0], yerr = gamma_pb[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Bleiabschirmung")
+plt.errorbar(gamma_pb[2], gamma_pb[0], yerr = gamma_pb[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Pb-Abschirmung")
 plt.plot(gamma_pb[2], exp(gamma_pb[2], *params), color="xkcd:orange", label="lin. Fit")
 plt.yscale("log")
 plt.xlabel(r"Dicke$/\si{\milli\meter}$")
@@ -80,7 +80,7 @@ print("Parameter m und n(=e^A) für Zinkabschirmung: ")
 print(uparams)
 
 
-plt.errorbar(gamma_zn[2], gamma_zn[0], yerr = gamma_zn[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Zinkabschirmung")
+plt.errorbar(gamma_zn[2], gamma_zn[0], yerr = gamma_zn[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Zn-Abschirmung")
 plt.plot(gamma_zn[2], exp(gamma_zn[2], *params), color="xkcd:orange", label="lin. Fit")
 plt.yscale("log")
 plt.xlabel(r"Dicke$/\si{\milli\meter}$")
@@ -117,8 +117,8 @@ beta[1] = np.sqrt( d_b**2 + d_n**2 )
 #    if(beta[0][i]-beta[1][i] < 0):
 #        beta[1][i] = beta[0][i] * 0.1
 #beta[0] += 0.1
-for i in range(beta[0].size):
-    print(beta[:,i])
+#for i in range(beta[0].size):
+#    print(beta[:,i])
 
 beta[2]*=2.7*1000000
 
@@ -139,16 +139,16 @@ print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
 print(uparams)
 
 
-plt.errorbar(beta[2], beta[0], yerr = beta[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Aluminiumabschirmung")
+plt.errorbar(beta[2], beta[0], yerr = beta[1], elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Messwerte für Al-Abschirmung")
 
-plt.plot(beta[2], exp(beta[2], *params), color="xkcd:orange", label="lin. Fit")
+plt.plot(beta[2], exp(beta[2], *params), color="xkcd:blue", label="linearer Fit 1")
 
 params, covar = curve_fit(exp, beta[2,pivot:], beta[0,pivot:], absolute_sigma=True, sigma = beta[1,pivot:], p0=(-1e-9,3))
 uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
 print("Parameter m und n(=e^A) für Aluminiumabschirmung: ")
 print(uparams)
 
-plt.plot(beta[2], exp(beta[2], *params), color="xkcd:orange", label="lin. Fit")
+plt.plot(beta[2], exp(beta[2], *params), color="xkcd:orange", label="linearer Fit 2")
 
 plt.yscale("log")
 plt.xlabel(r"R$/\si{\kg\per\meter\squared}$")
