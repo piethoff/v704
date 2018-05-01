@@ -16,7 +16,7 @@ Für die Nullrate ergibt sich ein Wert von:
         \bottomrule
     \end{tabular}
 \end{table}
-Aufgrund der hohen Messzeit für die Nullrate ust der Fehler vernachlässibar gering.
+Aufgrund der hohen Messzeit für die Nullrate ist der Fehler vernachlässibar gering.
 \noindent
 Die Messwerte für eine Abschirmung durch Blei sind in Tabelle \ref{tab:gamma_pb} zusammen mit der entsprechenden Aktivität aufgetragen.
 \begin{table}[H]
@@ -59,14 +59,19 @@ Es wird nach der Vorschrift
 \end{equation}
 mit den Fitparametern
 \begin{align}
-    \mu &= m = \SI{-0.099\pm0.001}{\per\milli\meter} \\
+    \mu &= -m = \SI{0.099\pm0.001}{\per\milli\meter} \\
     N_0 &= n = \SI{4.94\pm0.01}{\becquerel}.
 \end{align}
 Im Vergleich dazu steht der nach Gleichung \eqref{eq:klein} berechnete Theoriewert:
 \begin{align}
-    \mu_\text{Theorie} = \SI{0.069}{\per\milli\meter} \\
+    \label{mu}
+    \mu &= \sigma_\text{com}  \rho  N_A / Z \\
+    \mu_\text{Theorie} &= \SI{0.069}{\per\milli\meter} \\
 \end{align}
-Somit ergibt sich eine Abweichung von \SI{43.5\pm0.1}{\percent}.
+Hierbei ist $\rho$ die Dichte, $N_A$ die Avogadrokonstante \cite{na} und $Z$ die Ordnungszahl.
+Es werden die Werte $\varepsilon = \num{1.295}$ \cite{v704}, $\rho = \SI{11.342}{\gram\per\centi\meter\cubed}$ \cite{blei_dichte} und $Z=\num{}$ verwendet.
+% anzahl der teilchen pro volmeneinheit = dichte * teilchen/gramm = dichte * 6e23/Ordnungszahl
+Somit ergibt sich eine Abweichung von $\SI{43.5\pm0.1}{\percent}$.
 %
 Für die Absorbtion in Zink ergeben sich folgende Messwerte:
 \begin{table}
@@ -100,7 +105,7 @@ Für die Absorbtion in Zink ergeben sich folgende Messwerte:
 Es wie zuvor linear
 mit den Fitparametern
 \begin{align}
-    \mu &= m = \SI{-0.048\pm0.001}{\per\milli\meter} \\
+    \mu &= -m = \SI{0.048\pm0.001}{\per\milli\meter} \\
     N_0 &= n = \SI{5.07\pm0.01}{\becquerel}
 \end{align}
 gefittet.
@@ -108,6 +113,7 @@ Im Vergleich dazu steht der nach Gleichung \eqref{eq:klein} berechnete Theoriewe
 \begin{align}
     \mu_\text{Theorie} = \SI{0.051}{\per\milli\meter} \\
 \end{align}
+Es werden die Werte $\varepsilon = \num{1.295}$ \cite{v704}, $\rho = \SI{7.14}{\gram\per\centi\meter\cubed}$ \cite{zink_dichte} und $Z=\num{}$ verwendet.
 Somit ergibt sich eine Abweichung von \SI{5.9\pm2.0}{\percent}.
 %
 \subsection{Absorbtion von \texorpdfstring{$\beta$}{Beta}-Strahlung}
@@ -145,9 +151,9 @@ Aus der Messung der $\beta$-Stahlung entstehen die Messwerte in Tabelle \ref{tab
 \noindent
 Es werden zwei Bereiche mit folgenden Wertepaaren linear gefittet:
 \begin{align}
-    m_1 &= \SI{-8.5\pm37.6e-10}{\per\kg\meter\squared} \\ %e-10
-    n_1 &= \SI{-1.7\pm4.4}{\becquerel}                  \\
-    m_2 &= \SI{-1.123\pm0.003e-8}{\per\kg\meter\squared} \\ %e-8
+    m_1 &= \SI{-8.5\pm37.6}{\per\kg\meter\squared} \\ %e-10
+    n_1 &= \SI{-1.8\pm4.4}{\becquerel}                  \\
+    m_2 &= \SI{-112.3\pm0.4}{\per\kg\meter\squared} \\ %e-8
     n_2 &= \SI{6.125\pm0.005}{\becquerel}
 \end{align}
 Es folgt somit, dass
@@ -157,12 +163,20 @@ Es folgt somit, dass
 und
 \begin{equation}
     \symup{\Delta}R_\text{max} = \sqrt{
-        \left( \frac{1}{m_1-m_2}\symup{\Delta}n_2 \right) ^2 +
-        \left( \frac{1}{m_1-m_2}\symup{\Delta}n_1 \right) ^2 +
+        \left( \frac{1}{m_1-m_2} \right) ^2 (\symup{\Delta}n_1^2 + \symup{\Delta}n_1^2) +
         \left( \frac{n_2-n_1}{(m_1-m_2)^2}\right) ^2 \left(\symup{\Delta}m_1^2 + \symup{\Delta}m_2^2 \right)
         },
 \end{equation}
 wodurch ein Wert folgt von
 \begin{equation}
-    R_\text{max} = \SI{753\pm2611e6}{\kg\per\meter\squared}.
+    R_\text{max} = \SI{0.076\pm0.051}{\gram\per\centi\meter\squared}
 \end{equation}
+und somit durch Gleichung \eqref{emax}
+\begin{equation}
+    E_\text{max} = \SI{0.29\pm0.12}{\mega\electronvolt},
+\end{equation}
+wobei der Fehler mit
+\begin{equation}
+    \symup{\Delta}E_\text{max} = \frac{1.92 R_\text{max} + 0.2112}{\sqrt{R_\text{max}^2+0.22R_\text{max}}},
+\end{equation}
+folgt.
